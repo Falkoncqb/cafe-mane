@@ -1,5 +1,6 @@
 import { useCart } from '../context/CartContext';
 import './Hero.css';
+import GradualBlur from './GradualBlur';
 
 const Hero = () => {
   const { addToCart } = useCart();
@@ -38,11 +39,24 @@ const Hero = () => {
         </div>
         <div className="hero-image-wrapper">
           <div className="hero-image-glow"></div>
-          <img 
-            src={principalProduct.image} 
-            alt={principalProduct.name} 
-            className="hero-image"
-          />
+          <div className="hero-image-container">
+            <img 
+              src={principalProduct.image} 
+              alt={principalProduct.name} 
+              className="hero-image"
+            />
+            <GradualBlur
+              target="parent"
+              position="bottom"
+              height="6rem"
+              strength={2.5}
+              divCount={6}
+              curve="bezier"
+              exponential={true}
+              opacity={1}
+              zIndex={5}
+            />
+          </div>
         </div>
       </div>
     </section>
