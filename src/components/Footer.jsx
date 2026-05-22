@@ -1,8 +1,35 @@
 import './Footer.css';
+import GradualBlur from './GradualBlur';
 
 const Footer = () => {
   return (
     <footer className="footer">
+      <div className="footer-banner">
+        <img src="./footer_coffee.png" alt="Café de Especialidad" className="footer-banner-image" />
+        <GradualBlur
+          target="parent"
+          position="bottom"
+          height="120px"
+          strength={4}
+          divCount={8}
+          curve="bezier"
+          exponential={true}
+          opacity={1}
+          zIndex={5}
+        />
+        <GradualBlur
+          target="parent"
+          position="top"
+          height="120px"
+          strength={4}
+          divCount={8}
+          curve="bezier"
+          exponential={true}
+          opacity={1}
+          zIndex={5}
+        />
+      </div>
+
       <div className="footer-container">
         <div className="footer-logo-section">
           <div className="footer-logo">
