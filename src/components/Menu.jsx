@@ -19,7 +19,7 @@ const Menu = () => {
       name: 'Café Copacabana Molido 250g',
       price: 4500,
       description: 'Café molido tradicional de Copacabana, con cuerpo medio, aroma intenso y notas de cacao equilibradas, ideal para comenzar tu mañana con energía.',
-      image: '/cafecopacabana250gr.png',
+      image: './cafecopacabana250gr.png',
       tag: 'Nuevo',
       containImage: true,
       specs: [
@@ -34,7 +34,7 @@ const Menu = () => {
       name: 'Café Copacabana Grano Entero 250g',
       price: 8000,
       description: 'Granos enteros premium de Copacabana. Su tueste artesanal preserva los aceites esenciales, liberando notas frutales y un aroma inigualable al momento de moler.',
-      image: '/copabanaentero250gr.png',
+      image: './copabanaentero250gr.png',
       tag: 'Premium',
       containImage: true,
       specs: [
@@ -49,7 +49,7 @@ const Menu = () => {
       name: 'Café de Especialidad 4',
       price: 8000,
       description: 'Un café suave y aromático, perfecto para quienes buscan una experiencia de sabor balanceada y reconfortante.',
-      image: '/cafe4.png',
+      image: './cafe4.png',
       tag: 'Nuevo'
     }
   ];

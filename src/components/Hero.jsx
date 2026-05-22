@@ -8,7 +8,7 @@ const Hero = () => {
     id: 'latte-premium',
     name: 'Latte Brisa Marina - Blend Lobos',
     price: 20000,
-    image: '/cafe5.png',
+    image: './cafe5.png',
     description: 'Nuestra mezcla exclusiva inspirada en las olas y la brisa de Punta de Lobos. Tostado artesanalmente frente a las costas de Pichilemu, este café combina granos de especialidad con la energía del océano. Una experiencia cálida y sedosa, perfecta para después de una sesión de surf o para contemplar el atardecer marino, con sutiles notas de caramelo salado y nueces.'
   };
 

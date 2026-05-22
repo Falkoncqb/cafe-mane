@@ -7,19 +7,19 @@ const RELATED_PRODUCTS_PRESETS = [
     id: 'cafecopacabana250gr',
     name: 'Café Copacabana Molido 250g',
     price: 4500,
-    image: '/cafecopacabana250gr.png'
+    image: './cafecopacabana250gr.png'
   },
   {
     id: 'copabanaentero250gr',
     name: 'Café Copacabana Grano Entero 250g',
     price: 8000,
-    image: '/copabanaentero250gr.png'
+    image: './copabanaentero250gr.png'
   },
   {
     id: 'cafe4',
     name: 'Café de Especialidad 4',
     price: 8000,
-    image: '/cafe4.png'
+    image: './cafe4.png'
   }
 ];
 
@@ -99,8 +99,9 @@ const CartDrawer = () => {
         commerceOrder: `ORDER-${Date.now()}`
       };
 
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
       // Call our secure backend server
-      const response = await fetch('http://localhost:3001/api/create-payment', {
+      const response = await fetch(`${API_URL}/api/create-payment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

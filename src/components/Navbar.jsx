@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <a href="#inicio" className="navbar-logo">
-          <img src="/logocafe.png" alt="Mane Cafe Logo" className="navbar-logo-img" />
+          <img src="./logocafe.png" alt="Mane Cafe Logo" className="navbar-logo-img" />
           <span className="logo-text">Mane Cafe</span>
         </a>
 
