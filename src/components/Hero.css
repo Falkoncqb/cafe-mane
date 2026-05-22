@@ -1,0 +1,212 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px 0;
+  background-color: var(--coffee-dark);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to bottom, rgba(26, 10, 0, 0.9) 0%, rgba(26, 10, 0, 0.65) 50%, var(--coffee-dark) 100%),
+    url('/punta_de_lobos.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  animation: slowZoom 25s ease-in-out infinite alternate;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  color: var(--cream);
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(201, 169, 110, 0.15);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 20px;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--white), var(--cream), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #dfd5c6;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.hero-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 36px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--gold);
+  padding: 8px 0 8px 20px;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-value {
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-btn {
+  font-size: 1rem;
+  padding: 16px 36px;
+}
+
+.hero-btn-secondary {
+  text-decoration: none;
+  color: var(--cream);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: var(--transition);
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(107, 58, 31, 0.25) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: rotate(-2deg);
+  transition: var(--transition);
+}
+
+.hero-image:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-pricing {
+    align-items: center;
+    border-left: none;
+    border-bottom: 2px solid var(--gold);
+    padding: 0 0 16px 0;
+    margin: 0 auto 32px auto;
+    width: fit-content;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 380px;
+    transform: none;
+  }
+  
+  .hero-image:hover {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes slowZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.06) translate(1px, -2px);
+  }
+}

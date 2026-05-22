@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --cream: #f5f0e8;
+  --light-cream: #faf7f2;
+  --coffee-dark: #1a0a00;
+  --coffee: #3d1f0a;
+  --coffee-mid: #6b3a1f;
+  --coffee-light: #a0522d;
+  --gold: #c9a96e;
+  --gold-light: #e8c98a;
+  --text-dark: #1a0a00;
+  --text-mid: #4a2c12;
+  --text-light: #8a6040;
+  --white: #ffffff;
+  --shadow: 0 8px 32px rgba(26, 10, 0, 0.15);
+  --shadow-hover: 0 16px 48px rgba(26, 10, 0, 0.25);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light-cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--coffee-light);
+  border-radius: 3px;
+}
+
+/* Utility */
+.btn-primary {
+  background: linear-gradient(135deg, var(--coffee-mid), var(--coffee-light));
+  color: var(--white);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px rgba(107, 58, 31, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(107, 58, 31, 0.5);
+  background: linear-gradient(135deg, var(--coffee-light), var(--coffee-mid));
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--coffee-dark);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px rgba(201, 169, 110, 0.4);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.6);
+}

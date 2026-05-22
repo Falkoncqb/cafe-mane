@@ -1,0 +1,476 @@
+.flow-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.flow-window {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  font-family: 'Inter', sans-serif;
+  color: #333333;
+}
+
+/* Header */
+.flow-header {
+  background: #1e3a8a; /* flow blue */
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  border-bottom: 4px solid #f59e0b; /* flow yellow accent */
+}
+
+.flow-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-logo-icon {
+  font-size: 1.5rem;
+  color: #f59e0b;
+}
+
+.flow-logo-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.flow-sandbox-badge {
+  background: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.flow-order-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.flow-order-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.flow-order-amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Body */
+.flow-body {
+  padding: 32px;
+}
+
+.flow-body-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+.flow-methods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.flow-method-card {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.flow-method-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.flow-method-card.active {
+  border-color: #1e3a8a;
+  background: #f8fafc;
+}
+
+.method-logo-placeholder {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.webpay-logo { color: #e11d48; }
+.onepay-logo { color: #2563eb; }
+.mach-logo { color: #7c3aed; }
+.servipag-logo { color: #ea580c; }
+
+.method-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.method-radio {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+}
+
+.flow-method-card.active .method-radio {
+  border-color: #1e3a8a;
+  background: #1e3a8a;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+.flow-simulation-options {
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.simulation-toggle-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.flow-select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Footer */
+.flow-footer {
+  padding: 20px 32px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+.flow-cancel-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flow-cancel-btn:hover {
+  color: #ef4444;
+}
+
+.flow-pay-btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flow-pay-btn:hover {
+  background: #1e40af;
+}
+
+/* Step 2: Transbank Webpay Portal */
+.transbank-header {
+  background: #e11d48; /* webpay red */
+  padding: 16px 24px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transbank-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.transbank-merchant {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.transbank-body {
+  padding: 32px;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+}
+
+.transbank-payment-box {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.transbank-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.transbank-subtitle {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.transbank-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.t-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.t-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4b5563;
+  text-transform: uppercase;
+}
+
+.t-group input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.t-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.transbank-info-alert {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #1e3a8a;
+  line-height: 1.4;
+}
+
+.transbank-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.t-btn-cancel {
+  background: #e5e7eb;
+  color: #4b5563;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.t-btn-pay {
+  background: #e11d48;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.t-btn-pay:hover { background: #be123c; }
+
+/* Step 3: Processing */
+.flow-step-3 {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.flow-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.flow-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #1e3a8a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.flow-progress-bar {
+  width: 100%;
+  max-width: 300px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flow-progress-fill {
+  height: 100%;
+  background: #1e3a8a;
+  width: 0;
+  animation: fillProgress 2.5s ease-in-out forwards;
+}
+
+@keyframes fillProgress {
+  to { width: 100%; }
+}
+
+/* Step 4: Receipt */
+.flow-step-4 {
+  padding: 40px 32px;
+}
+
+.receipt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.receipt-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.receipt-icon.success {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.receipt-icon.failure {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.receipt-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.text-success { color: #059669; }
+.text-failure { color: #dc2626; }
+
+.receipt-subtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.receipt-details-box {
+  width: 100%;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.receipt-row strong {
+  color: #111827;
+}
+
+.badge-success {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-failure {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.receipt-btn {
+  width: 100%;
+  max-width: 250px;
+}
+
+@media (max-width: 600px) {
+  .flow-methods-grid {
+    grid-template-columns: 1fr;
+  }
+}
